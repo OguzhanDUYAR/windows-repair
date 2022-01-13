@@ -1,0 +1,98 @@
+::[Bat To Exe Converter]
+::
+::YAwzoRdxOk+EWAjk
+::fBw5plQjdCyDJGyX8VAjFBRTWR6KAE+1EbsQ5+n//NbW9hRPArJnKNyMl+XdbfMW/lHte5Fg1XVUnsILGQldMwCufg49uyNRo3SVONWI/gDxXkGE71ExD2x7iS7XgyQ8bNZXwpBQi3Hw9U7w/w==
+::YAwzuBVtJxjWCl3EqQJgSA==
+::ZR4luwNxJguZRRmI/UwlMHs=
+::Yhs/ulQjdF+5
+::cxAkpRVqdFKZSjk=
+::cBs/ulQjdF+5
+::ZR41oxFsdFKZSTk=
+::eBoioBt6dFKZSDk=
+::cRo6pxp7LAbNWATEpCI=
+::egkzugNsPRvcWATEpCI=
+::dAsiuh18IRvcCxnZtBJQ
+::cRYluBh/LU+EWAjk
+::YxY4rhs+aU+IeA==
+::cxY6rQJ7JhzQF1fEqQJhZksaHErSXA==
+::ZQ05rAF9IBncCkqN+0xwdVsFAlTMbCXqZg==
+::ZQ05rAF9IAHYFVzEqQIfLw5ORAWMfE+PP5QuiA==
+::eg0/rx1wNQPfEVWB+kM9LVsJDCuFKXGyB7tczN3Cztjn
+::fBEirQZwNQPfEVWB+kM9LVsJDCuFKXGyB7tczN3Cztjn
+::cRolqwZ3JBvQF1fEqQIfLw5ORAWMfE+PP5QuiA==
+::dhA7uBVwLU+EWHaD4Vg4KRUUaDG7HVna
+::YQ03rBFzNR3SWATE20UlMhNVQkSmCVKbNNU=
+::dhAmsQZ3MwfNWATE03Ice3s=
+::ZQ0/vhVqMQ3MEVWAtB9wSA==
+::Zg8zqx1/OA3MEVWAtB9wSA==
+::dhA7pRFwIByZRRnk
+::Zh4grVQjdCyDJGyX8VAjFBRTWR6KAE+/Fb4I5/jH2OOJpkIKR6ILeYLSyPqLOOVz
+::YB416Ek+ZW8=
+::
+::
+::978f952a14a936cc963da21a135fa983
+@echo off
+title Windows Onarıcı 1.0 noarchby 
+
+color 0a
+:a
+echo ********************************************************************************
+echo *                       Welcome to Windows Repairer. ( 1.0 noarchby )          *   
+echo *                                                                              *
+echo *    Make sure you are connected to the internet!                              *
+echo *    If everything is ready, continue.                                         *
+echo *                                                       By Oguzhan DUYAR       *
+echo ********************************************************************************
+echo **********************Press any key to continue*********************************
+pause >nul
+cls
+sfc /scannow
+echo ********************************************************************************
+echo *       -Continue if you did not encounter the general scan complete error.    *   
+echo *                       Press any key to continue                              *
+echo ********************************************************************************
+pause >nul
+cls
+DISM /Online /Cleanup-Image /CheckHealth
+DISM /Online /Cleanup-Image /ScanHealth
+DISM /Online /Cleanup-Image /RestoreHealth
+echo ********************************************************************************
+echo *   -Windows image repair completed, continue.                                 *   
+echo *                       Press any key to continue                              *
+echo ********************************************************************************
+pause >nul
+cls
+bootrec.exe
+BOOTREC /FIXMBR
+BOOTREC /FIXBOOT
+BOOTREC / RebuildBcd
+echo ********************************************************************************
+echo *            -Windows startup repair completed.                                *   
+echo *                       Press any key to continue                              *
+echo ********************************************************************************
+pause >nul
+cls
+echo y | del /S /q  %temp%\*
+echo y | del /S /q  C:\Windows\Prefetch\*
+echo y | del /S /q  %temp%\*
+cleanmgr /sagerun
+WSReset.exe
+ipconfig/flushDNS
+
+
+echo ********************************************************************************
+echo *            -Clear system cache.                                              *   
+echo *                       Press any key to continue                              *
+echo ********************************************************************************
+pause >nul
+cls
+echo ********************************************************************************
+echo *- Congratulations if you have completed all the steps, the repair is complete.*
+echo *-If the problem persists, search the Internet or switch to Linux (RECOMMENDED)*  
+echo *-Possible solutions                                                           *
+echo *-Restore Windows by running -rstrui.exe.                                      *
+echo *-If you don't have a windows restore point, you should reset windows          *
+echo *                       Press any key to continue                              *
+echo ********************************************************************************
+pause >nul
+goto a
